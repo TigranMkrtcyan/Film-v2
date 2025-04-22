@@ -1,0 +1,78 @@
+header {
+    margin: auto;
+    width: 95%;
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 45px;
+    position: relative;
+}
+
+.btns {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: #8bc4ff;
+}
+
+.genresContainer {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transform: translateX(-50%);
+    animation: genresAppear 0.5s linear;
+    overflow: hidden;
+}
+
+.genrebtn {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.genrebtn:hover {
+    background-color: #c68bff;
+}
+
+@keyframes genresAppear {
+    0% {
+        max-height: 0;
+        min-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        opacity: 0;
+    }
+    100% {
+        max-height: 1000px;
+        min-height: 70px;
+        padding: 15px;
+        opacity: 1;
+    }
+}
