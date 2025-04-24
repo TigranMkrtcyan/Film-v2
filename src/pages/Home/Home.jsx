@@ -1,46 +1,47 @@
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
-import { getGenres } from '../../store/Slices/genreSlice'
-import { MdLocalMovies } from "react-icons/md";
+import { getMovieThunk } from '../../store/Slices/movieSlice';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 import style from './Home.module.css'
-import { changeLanguage } from '../../store/Slices/globalSlice';
+
+import HomeSlider from '../../components/sliders/HomeSlider/HomeSlider';
 
 const Home = () => {
     const dispatch = useDispatch()
-    const { genres } = useSelector(state => state.Genre)
+    const { movies } = useSelector(state => state.Movie)
     const { language } = useSelector(state => state.Global)
 
-    const [isGenre, setIsGenre] = useState(false)
-
     useEffect(() => {
-        dispatch(getGenres({language}))
+        dispatch(getMovieThunk({
+            language,
+            pageCount: 1
+        }))
     }, [language])
 
-    console.log(language);
-    
+    console.log(movies);
+
     return (
-        <header>
-            <MdLocalMovies />
-            <div className={style.btns}>
-                <button className={style.btn}>Home</button>
-                <button className={style.btn}>Movies</button>
-                <button className={style.btn} onClick={() => setIsGenre(!isGenre)}>Genres</button>
-            </div>
-            {isGenre && (
-                <div className={style.genresContainer}>
-                    {genres.map(el => (
-                        <button key={el.id} className={style.genrebtn}>
-                            {el.name}
-                        </button>
-                    ))}
-                </div>
-            )}
-                    <select name="language" onChange={(e) => dispatch(changeLanguage(e.target.value))}>
-                    <option value="en-Us">EN</option>
-                    <option value="ru-RU">RU</option>
-                </select>
-        </header>
+        <div className={style.home}>
+            <Swiper
+                spaceBetween={50}
+                slidesPerView={2}
+                autoplay={{ delay: 3000 }}
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+                modules={[Autoplay, Navigation]}
+            >
+                {
+                    movies.map((el) => {
+                        return <SwiperSlide><HomeSlider el={el} /></SwiperSlide>
+                    })
+                }
+            </Swiper>
+        </div>
     )
 }
 

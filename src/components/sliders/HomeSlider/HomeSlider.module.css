@@ -1,0 +1,14 @@
+.h1 {
+    color:#64AFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.poster {
+    border-radius: 8px;
+}
+
+.slide {
+    text-align: center;
+}

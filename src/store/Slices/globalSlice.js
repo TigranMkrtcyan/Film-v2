@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const globalSlice = createSlice({
-    name : "globalSlice",
-    initialState : {
-        language : "en-Us",
-        loading : false
+    name: "globalSlice",
+    initialState: {
+        language: "en-Us",
+        loading: false
     },
-    reducers : {
-        changeLanguage(state,action) {
+    reducers: {
+        changeLanguage(state, action) {
             state.language = action.payload
         },
-        changeLoading(state,action) {
+        changeLoading(state, action) {
             state.language = action.payload
         }
     }
 })
 
-export const {changeLanguage} = globalSlice.actions
+export const { changeLanguage, changeLoading } = globalSlice.actions
 export default globalSlice.reducer
