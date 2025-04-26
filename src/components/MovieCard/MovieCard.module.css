@@ -1,0 +1,31 @@
+.h3 {
+    width: 280px;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ganre {
+    width: 300px;
+    border-radius: 16px;
+    text-align: center;
+    background-color: #efefef;
+}
+
+.information { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #FFB464;
+    margin: 10px 0;
+}
+
+.poster {
+    border-radius: 16px;
+}
+
+svg {
+    color: #64AFFF;
+}

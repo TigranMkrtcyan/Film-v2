@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import style from './Home.module.css'
 
 import HomeSlider from '../../components/sliders/HomeSlider/HomeSlider';
+import Movies from '../../components/Movies/Movies';
 
 const Home = () => {
     const dispatch = useDispatch()
@@ -22,8 +23,6 @@ const Home = () => {
             pageCount: 1
         }))
     }, [language])
-
-    console.log(movies);
 
     return (
         <div className={style.home}>
@@ -41,7 +40,9 @@ const Home = () => {
                     })
                 }
             </Swiper>
+            <Movies />
         </div>
+
     )
 }
 

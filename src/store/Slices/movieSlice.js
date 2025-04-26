@@ -23,7 +23,6 @@ export const getSearch = createAsyncThunk(
     "getSearch",
     async (text) => {
         const res = await FilmAPI.search(text)
-        console.log(text);
 
         return res.data.results
     }
