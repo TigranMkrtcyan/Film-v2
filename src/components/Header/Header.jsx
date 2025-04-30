@@ -5,6 +5,7 @@ import { MdLocalMovies } from "react-icons/md";
 import { AnimatePresence, motion } from 'framer-motion';
 import style from './Header.module.css'
 import { changeLanguage } from '../../store/Slices/globalSlice';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
 
@@ -20,11 +21,19 @@ const Header = () => {
 
     return (
         <header>
-            <MdLocalMovies />
+            <NavLink to={`/`}>
+                <MdLocalMovies />
+            </NavLink>
             <div className={style.btns}>
-                <button className={style.btn}>Home</button>
-                <button className={style.btn}>Movies</button>
+                <NavLink to={`/`}>
+                    <button className={style.btn}>Home</button>
+                </NavLink>
+                <NavLink>
+                    <button className={style.btn}>Movies</button>
+                </NavLink>
+                <NavLink>
                 <button className={style.btn} onClick={() => setIsGenre(!isGenre)}>Genres</button>
+                </NavLink>
             </div>
             <AnimatePresence>
                 {isGenre && (

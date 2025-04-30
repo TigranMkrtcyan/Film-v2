@@ -1,0 +1,54 @@
+.movie {
+    margin: auto;
+    margin-top: 120px;
+    width: 800px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #efefef;
+    border-radius: 8px;
+}
+
+.texts {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.info {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.text {
+    padding: 0 10px;
+    width: 400px;
+    height: 30px;
+    color: #FFB464;
+    border-radius: 8px;
+    text-align: start;
+    justify-content: flex-start;
+}
+
+.poster {
+    height: 540px;
+}
+
+span {
+    color: #64AFFF;
+}
+
+.title {
+    color: #4498f1;
+}
+
+img {
+    border-radius: 8px;
+}

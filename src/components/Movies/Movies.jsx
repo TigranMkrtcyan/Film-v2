@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import style from './Movies.module.css'
 import { useEffect } from 'react'
-import { getMovieThunk } from '../../store/Slices/movieSlice'
 import MovieCard from '../MovieCard/MovieCard'
+import { getMovieThunk } from '../../store/slices/movieSlice'
 
 const Movies = () => {
     const dispatch = useDispatch()
@@ -16,12 +16,12 @@ const Movies = () => {
             pageCount: 1
         }))
     }, [language])
-    
+
     return (
         <div className={style.movies}>
             {
                 movies.map((el) => {
-                    return <MovieCard el={el} key={el.id}/>
+                    return <MovieCard el={el} key={el.id} />
                 })
             }
         </div>
